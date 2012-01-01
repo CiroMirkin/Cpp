@@ -118,15 +118,65 @@ if(strcmp(a, b) == 0) {
 ```
 
 ## Vectores
-Es un tipo parametrico, su valor determina su tipo.
+Es un tipo parametrico, su valor determina su tipo. </br>
+Suelen ser de tipo entero.
+
+Libreria:
 
 ```cpp
-	#include<vector
+	#include<vector>
 ```
 
+Creacion y uso
+
 ```cpp
-vector<string> ejemplo1 = {"a","b"};
-vector<int> ejemplo2 = {1,2];
+	vector<int> nums(4);
+
+	nums[0] = 1;
+	nums[1] = 2;
+	nums[2] = 3;
+	nums[3] = 3;
+
+	cout<<nums[0]<<endl;
+```
+
+### Optener longitud de un vector
+
+```cpp
+nums.size();
+```
+
+### Recorrer un vector
+
+Es recomentable convertir la longitud del vector a un entero para evitar errores, pero no es absolutamente necesario.
+
+```cpp
+vector<int> nums(4);
+for(int i=0; i<int(nums.size()); i++) {
+	int n = nums[i];
+}
+```
+
+### Redimencionar un vector
+
+Si lo achicamos los elementos previos se perdenar.
+
+```cpp
+nums.resize(2);
+```
+
+### Añadir y quitar ultimos elementos del vector
+
+Añadir un elemento a lo ultimo:
+
+```cpp
+nums.push_back(80);
+```
+
+Eliminar el ultimo elemento:
+
+```cpp
+nums.pop_back();
 ```
 
 Podemos copiar dos vectores del mismo tipo.

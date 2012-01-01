@@ -13,6 +13,11 @@ int main() {
 	nums[3] = 3;
 
 	cout<<nums[0]<<endl;
+	
+	for(int i=0; i<int(nums.size()); i++) {
+		int n = nums[i];
+		cout<<n<<endl;
+	}
 
 	nums.resize(2);
 
