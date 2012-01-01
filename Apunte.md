@@ -117,6 +117,26 @@ if(strcmp(a, b) == 0) {
 }
 ```
 
+## Vectores
+Es un tipo parametrico, su valor determina su tipo.
+
+```cpp
+	#include<vector
+```
+
+```cpp
+vector<string> ejemplo1 = {"a","b"};
+vector<int> ejemplo2 = {1,2];
+```
+
+Podemos copiar dos vectores del mismo tipo.
+
+el contenido de ejemplo2 se copia al vector ejemplo1:
+
+```cpp
+ejemplo1 = ejemplo2
+```
+
 ## Punteros
 
 Creacion:
