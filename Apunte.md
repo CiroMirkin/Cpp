@@ -1,8 +1,7 @@
 # Apunte
 
-``` ```
-
----
+**Aviso**: Este archivo contiene faltas de ortografia debido a que fue escrito rapido, eso si el código esta libre de errores.
+</br></br></br></br>
 
 ## Tipo de dato Char
 
