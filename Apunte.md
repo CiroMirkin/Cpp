@@ -3,6 +3,15 @@
 **Aviso**: Este archivo contiene faltas de ortografia debido a que fue escrito rapido, eso si el código esta libre de errores.
 </br></br></br></br>
 
+## Convercion explicita de tipos
+
+Convertir flotante a entero
+
+```cpp
+float nr = 1.3;
+int n = int(nr);
+```
+
 ## Tipo de dato Char
 
 Crear y guardar
