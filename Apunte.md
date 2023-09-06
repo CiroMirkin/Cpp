@@ -12,6 +12,23 @@ float nr = 1.3;
 int n = int(nr);
 ```
 
+## Sentencias de control
+
+Las sentencias de control nos permiten controlar el flujo de control dentro de ciclos.
+
+### Continue
+
+Todo lo que este despues de la sentencia *continue* se va a omitir, se saltara directamente a la condicion del while(i<10)
+
+```cpp	
+while(i<10) {
+	i++;
+	cout<<"> ";
+	if(i>=5) continue; 
+	cout<<"Todabia estamos antes del 5"<<endl;
+}
+```
+
 ## Tipo de dato Char
 
 Crear y guardar
@@ -126,7 +143,88 @@ if(strcmp(a, b) == 0) {
 }
 ```
 
+## Estructuras (Estructura de datos)
+
+Se definen Globalmente arriba de la funcion principal *main*
+
+Se pueden crear vacias como en este ejemplo:
+
+```cpp
+struct infoUsuario {
+	char nombre[16];
+	int edad;
+} usuario2;
+```
+
+O Con un contenido por defecto
+
+```cpp
+struct infoUsuario {
+	char nombre[16];
+	int edad;
+} usuario1 = {
+	"Ciro",
+	17
+}; 
+```
+
+### Vector de estructuras
+
+Importamos la libreria para los vectores
+
+```cpp
+#include<vector>
+```
+
+Definimos como sera la estructura
+
+```cpp
+struct Alumno {
+	string nombre, apellido;
+	char divicion;
+	int edad;
+};
+```
+
+Creamos el arreglo dentro de la funcion principal *main*
+
+```cpp
+vector<Alumno> alumnos(2);
+```
+
+Y para rellenarlo o mostrarlo seria asi (en este caso lo rellenamos)
+
+```cpp
+for(int i=0; i<int(n); i++) {
+	cout<<"Nombre: ";
+	cin>>alumnos[i].nombre;
+	cout<<"Apellido: ";
+	cin>>alumnos[i].apellido;
+	cout<<"Divicion: ";
+	cin>>alumnos[i].divicion;
+	cout<<"edad: ";
+	cin>>alumnos[i].edad;
+	cout<<endl;
+}
+```
+
+### Estructuras anidadas
+
+Crear una arreglo no es necesario, si no lo necesitas quita los corchetes [2] y cambia el nombre a la estructura creada (arregloDeEstructuras).
+
+```cpp
+struct estructuraHijo {
+	int numero;
+};
+
+struct estructuraPadre {
+	char nombre[10];
+	struct estructuraHijo hijo;
+} arregloDeEstructuras[2];
+```
+
 ## Vectores
+
 Es un tipo parametrico, su valor determina su tipo. </br>
 Suelen ser de tipo entero.
 
@@ -247,6 +345,35 @@ for(int i=0; i<3; i++) {
 }	
 ```
 
+### Puntero como parametro de una funcion
+
+Puntero como argumento:
+
+```cpp
+void cambiarValor(int *n, int nn) {
+	*n = nn;
+}
+
+int main() {
+	
+	int n = 1;
+	int *np;
+	np = &n;
+	
+	cout<<n<<endl;
+	cambiarValor(np, 7);
+	cout<<n<<endl;
+	
+	return 0;
+}
+```
+
+Tambien podemos pasar directamente la direccion:
+
+```cpp
+cambiarValor(&n, 5);
+```
+
 ### Arreglos dinamicos
 
 new -> Reserva el numero de bytes solicitado por una declaracion
@@ -268,7 +395,92 @@ Liberamos la memoria reservada al terminar de usar el arreglo.
 delete[] arregloDinamico;
 ```
 
-### Funciones matematicas
+## Funciones
+
+El Prototipo de una funcion se situa **antes** de la funcion principal *main*.
+
+```cpp
+int sumarDosNumeros(int a, int b);
+```
+
+Luego llamarla en la funcion *main* y almacenar en una variable lo que retorna
+
+```cpp
+int main() {
+	int suma = sumarDosNumeros(2, 2);
+	cout<<suma;
+
+	return 0;
+}
+```
+
+Por ultimo definimos la funcion debajo de la funcion principal *main*
+
+```cpp
+int sumarDosNumeros(int a, int b) {
+	int suma = a + b;
+	return suma;
+}
+```
+
+### Paso por referencia a una funcion
+
+```cpp
+void mostrarNumero(int&);
+
+int main() {
+	int numero = 2023;
+	mostrarNumero(numero);	
+	return 0;
+}
+
+void mostrarNumero(int& numero) {
+	cout<<numero;
+}
+```
+
+### Arreglos como parametro de una funcion
+
+```cpp
+void mostrarArreglo(int arr[], int arrLong);
+
+int main() {
+	
+	int nums[] = {1,2,3,4};
+	mostrarArreglo(nums, 4);
+	
+	return 0;
+}
+
+void mostrarArreglo(int arr[], int arrLong) {
+	for(int i=0; i<arrLong; i++) cout<<arr[i]<<" - ";
+}
+```
+
+Para un Arreglo bidimencional es necesario definir el largo del segundo arreglo (X)
+
+```cpp
+#define arrX 3 
+
+void mostrarArreglo(int arr[][arrX], int arrLong);
+
+int main() {
+	int arrY = 2;
+	int nums[arrY][arrX] = {{1,2,3}, {5,6,7}};
+	mostrarArreglo(nums, arrY);
+	
+	return 0;
+}
+
+void mostrarArreglo(int arr[][arrX], int arrY) {
+	for(int i=0; i<arrY; i++) {
+		for(int j=0; j<arrX; j++) cout<<arr[i][j];
+		cout<<endl;
+	};
+}
+```
+
+## Funciones matematicas
 
 n1 elevado a n2
 
@@ -282,7 +494,7 @@ raiz cuadrada
 sqrt(n);
 ```
 
-### stdlib.h
+## stdlib.h
 
 Obtener el mayor de dos numeros
 
@@ -308,7 +520,7 @@ Obtener numero aleatorio
 rand();
 ```
 
-### ctype.h
+## ctype.h
 
 
 Funciones booleanas (true o false)

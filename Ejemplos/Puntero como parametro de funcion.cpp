@@ -1,7 +1,9 @@
 #include<iostream>
 using namespace std;
 
-void cambiarValor(int *n, int nn);
+void cambiarValor(int *n, int nn){
+	*n = nn;
+}
 
 int main() {
 	
@@ -18,6 +20,3 @@ int main() {
 	return 0;
 }
 
-void cambiarValor(int *n, int nn) {
-	*n = nn;
-}
