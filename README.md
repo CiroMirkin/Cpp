@@ -17,3 +17,5 @@ La carpeta [Problemas OIA resueltos](./Problemas_OIA_resueltos) contiene problem
 * [DevDocs](https://devdocs.io/cpp/)
 
 * [Manual OIA 2022](https://www.oia.unsam.edu.ar/wp-content/uploads/2022/06/Manual-OIA-2022.pdf)
+
+* [C++ Ejercicios Básicos Resueltos](https://ejercicioscpp.blogspot.com/2012/11/c-ejercicios-basicos-resueltos.html)
