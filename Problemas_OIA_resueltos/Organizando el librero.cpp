@@ -5,8 +5,6 @@ using namespace std;
 
 #define forr(n,i) for(int i=0; i<int(n); i++)
 
-// orden [2] 0,altura final 1, cantidad de ordenamientos
-
 bool puedo(vector<int> bases, vector<int> libros) {
 	int n = int(bases.size());
 
@@ -62,7 +60,7 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 
 	int altura = 0, posi=0;
 	int n = int(libros.size());
-	int pos1, pos2, contador, i=0, oldc;
+	int pos1, pos2, contador, i=0, ii=0, oldc;
 	bool control=false;
 
 	contador=1;
@@ -73,6 +71,7 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 
 		oldc = contador;
 		pos1 = basesc[i] + librosc[i];
+		orden[i] = i+1;
 
 //		cout<<basesc[i]<<" + "<<librosc[i]<<" = "<<pos1<<endl;
 
@@ -88,6 +87,7 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 					pos2 = base + libro;
 
 					if(pos1 == pos2 and libro>0) {
+						orden[h] = j+1;
 						i++;
 //						cout<<base<<" + "<<libro<<" = "<<pos1<<endl<<"index: "<<i<<endl;
 
@@ -105,9 +105,11 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 			}
 			if(contador == n) break;
 		}
+		
 		if(i == n) {
 			i=0;
-		} else if(oldc == contador) {
+		} 
+		else if(oldc == contador) {
 			basesc = bases;
 			librosc = libros;
 			contador=1;
@@ -117,8 +119,8 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 
 	altura = pos1;
 
-	lib[1]= posi;
 	lib[0] = altura;
+	lib[1]= posi; // 1, cantidad de ordenamientos
 	return lib;
 }
 
@@ -142,7 +144,7 @@ int main() {
 	}
 	vector<int> lib = librero(alturabases, alturalibros, orden);
 
-	cout<<" -- "<<lib[0]<<" "<<lib[1]<<endl;
+	cout<<lib[0]<<" "<<lib[1]<<endl;
 
 	forr(n,i) {
 		cout<<orden[i]<<" ";
