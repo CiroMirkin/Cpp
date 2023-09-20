@@ -57,30 +57,65 @@ vector<int> librero(vector<int> bases, vector<int> libros, vector<int>& orden) {
 		lib[0] = -1;
 		return lib;
 	}
-	
+
 	vector<int> basesc = bases, librosc = libros;
-	
+
 	int altura = 0, posi=0;
 	int n = int(libros.size());
-	int pos1, pos2;
-	forr(n, i) {
-		pos1 = bases[i] + libros[i];
+	int pos1, pos2, contador, i=0, oldc;
+	bool control=false;
+
+	contador=1;
+
+	while(true) {
+		if(i>n) break;
+		if(contador==n) break;
+
+		oldc = contador;
+		pos1 = basesc[i] + librosc[i];
+
+//		cout<<basesc[i]<<" + "<<librosc[i]<<" = "<<pos1<<endl;
+
+		basesc[i] = 0;
+		librosc[i] = 0;
+
 		forr(n,h) {
-			h+=i;
-			if(h>n) break;
-			
-			int base = bases[h];
-			forr(n,j) {
-				j+=i;
-				if(j>n) break;
-			
-				pos2 = base + libros[j];
-				if(pos1 == pos2) {
-					cout<<endl<<pos1;
+			int base = basesc[h];
+			if(base>0) {
+
+				forr(n,j) {
+					int libro = librosc[j];
+					pos2 = base + libro;
+
+					if(pos1 == pos2 and libro>0) {
+						i++;
+//						cout<<base<<" + "<<libro<<" = "<<pos1<<endl<<"index: "<<i<<endl;
+
+						basesc[h] = 0;
+						librosc[j] = 0;
+
+						contador++;
+						control = true;
+					}
+					if(contador == n or control) {
+						control = false;
+						break;
+					}
 				}
 			}
+			if(contador == n) break;
+		}
+		if(i == n) {
+			i=0;
+		} else if(oldc == contador) {
+			basesc = bases;
+			librosc = libros;
+			contador=1;
+			i++;
 		}
 	}
+
+	altura = pos1;
 
 	lib[1]= posi;
 	lib[0] = altura;
