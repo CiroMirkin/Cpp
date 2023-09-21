@@ -1,12 +1,6 @@
 #include<iostream>
 using namespace std;
 
-// Numero primo, es divisible por 1 y por si mismo
-
-// Entrada int N
-
-// Salida de primos hasta N
-
 int main() {
 	int n;
 	int nums[] = {1,2,3,4,5,6,7,8,9,10};

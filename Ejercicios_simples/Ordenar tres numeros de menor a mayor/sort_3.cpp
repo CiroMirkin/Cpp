@@ -1,9 +1,6 @@
 #include<iostream>
 using namespace std;
 
-// Entrada: Tres numeros
-// Salida: Ordenados de menor a mayor
-
 int main() {
 	cout<<"> ";
 	int a,b,c;

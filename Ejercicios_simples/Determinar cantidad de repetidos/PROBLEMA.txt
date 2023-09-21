@@ -1,0 +1,2 @@
+Entrada: Primero un entero N que determina la cantidad de numeros y segundo N numeros enteros.
+Salida: La cantidad de numeros repetidos que se ingresaron.

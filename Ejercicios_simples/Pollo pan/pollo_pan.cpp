@@ -3,14 +3,6 @@
 #include<ctype.h>
 using namespace std;
 
-// Si la entrada es "pollo".
-
-// La salida sera:
-// *******
-// *pollo*
-// *******
-
-
 int main(){
 	int longitud=0;
 	char in[10];

@@ -1,0 +1,2 @@
+Entrada: Tres numeros enteros
+Salida: Mostrar los numeros ordenados de menor a mayor.

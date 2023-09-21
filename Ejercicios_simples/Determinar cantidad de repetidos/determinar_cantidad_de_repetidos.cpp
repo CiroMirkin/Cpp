@@ -2,10 +2,6 @@
 #include<vector>
 using namespace std;
 
-// Entrada: secuencia de numeros
-
-// Salida: Mostrar las apariciones de un numero del 1 al 10
-
 int main() {
 	int Nnums;
 	cout<<"> ";
@@ -17,13 +13,12 @@ int main() {
 		cin>>nums[i];
 	}
 	
-	cout<<endl;
-	
-	int count;
+	int count=0;
+	int countRepetidos = 0;
 	vector<int> repetidos(Nnums/2);
 	
 	for(int i=0; i<Nnums; i++) {
-		count = 0;
+		count=0;
 		int n = nums[i];
 		for(int j=0; j<Nnums; j++) {
 			if(n == nums[j] and n != 0){
@@ -31,13 +26,12 @@ int main() {
 				nums[j] = 0;	
 			}
 		}
-		if(count>1 and n!= 0) {
-			cout<<n<<" aparece "<<count<<" veces"<<endl;
-		} 
-		else if(n!= 0) {
-			cout<<n<<" aparece una vez"<<endl;
+		if(count>1 and n != 0) {
+			countRepetidos += count;
 		}
 	}
+	
+	cout<<"Repetidos: "<<countRepetidos;
 
 	return 0;
 }

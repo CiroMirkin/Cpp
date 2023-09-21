@@ -1,0 +1,3 @@
+Un numero primo es divisible por 1 y por si mismo.
+
+La entrada es un numero entero N y la salida son todos los numeros primos hasta N.

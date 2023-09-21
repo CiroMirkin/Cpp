@@ -1,13 +1,6 @@
 #include<iostream>
 using namespace std;
 
-// Leer N: 6
-
-// Imprimir: suma de pares menos la suma de los impares hasta N contando N.
-// (2+4+6)-(1+3+5) = 3
-
-// Para 1 la salida es 1
-
 int main(){
 	int n, cont = 0;
 	int nums[] = {1,2,3,4,5,6,7,8,9};

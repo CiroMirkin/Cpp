@@ -1,0 +1,10 @@
+Entrada: Un string de longitud no definida.
+Salida: El string encerrado en un cuadrado de asteriscos (*).
+
+Ejemplo:
+
+La entrada: "pollo".
+La salida:
+*******
+*pollo*
+*******

@@ -1,0 +1,3 @@
+Entrada: secuencia de numeros
+
+Salida: Mostrar las apariciones de cada numero del 1 al 10
