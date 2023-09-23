@@ -1,5 +1,9 @@
 # Apunte de C++
 
+**Variable gloabal:** int global_var=0;
+
+ #define forr(n, i) for(int i=0; i **<** n; i++) 
+
 ## Vectores
 
 **Libreria:** #include< vector >
@@ -30,9 +34,6 @@ nums[ 0 ] = 1;
 vector< int > librero( ) { } </br>
 vector< int > lib = librero(alturabases, alturalibros, orden);
 
-## #Define
- #define forr(n, i) for(int i=0; i **<** n; i++) </br>
-forr( 4, i ) { }
 ## Arreglos
 
 int cantidadmayores( int edades[ ], int cantidadEdades );
@@ -55,6 +56,77 @@ delete[ ] nums; </br>
 string nombre; </br>
 cin>>nombre; </br>
 cout<<nombre; </br>	
+
+**Copiar contenido:** a = b;
+
+**Obtener longitud¨:** nombre.size();
+
+**Saber si dos cadenas son iguales:** if(nombre.compare(nombre2 == 0) { }
+
+**Concatenacion:** nombre.append(letra); || nombre += letra;
+
+**Invertir:** for(int i = int( nombre.size() ) - 1 ; i >= 0; i--) nombre2.append( nombre[ i ] );
+
+**Caracter a mayuscula:** nombre[ i ] = toupper( nombre[ i ] );
+
+**Caracter a minuscula:** nombre[ i ] = tolower( nombre[ i ] );
+
+**Sub string:** str.substr( init, endeFromInit ); 
+
+string nombre = "mateo"; </br>
+string nombre2 = nombre.substr( 2, 2 ); // "te";
+
+## Char
+char nombreDeMiGato [] = "Kim"; </br>
+char nombreDePersona[20]; </br>
+cin.getline(nombreDePersona, 20, '\n');
+
+**Obtener longitud:** strlen(texto);
+
+**Convertir a entero:** atoi(caracteres) Libreria: #include<stdlib.h>
+
+**Convertir a flotante:** atof(caracteres) Libreria: #include<stdlib.h>
+
+**Pasar a mayusculas:** strlwr(palabra)
+
+**Copiar contenido de a hacia b:** strcpy( b, a )
+
+**Saber si dos cadenas son iguales:** if(strcmp( a, b ) == 0) { }
+
+**Invertir:** strrev(cad);
+
+## Estructuras 
+
+struct infoUsuario { </br>
+	char nombre[16]; </br>
+	int edad; </br>
+} </br>
+usuario1 = { </br>
+	"Ciro", </br>
+	17 </br>
+}, </br>
+usuario2;
+
+cin>>usuario2.edad; </br>
+cout<<"Edad: "<<usuario2.edad;
+
+**Arreglo:** 
+
+struct estructuraHijo { </br>
+	int numero; </br>
+}; </br>
+
+struct estructuraPadre { </br>
+	char nombre[10]; </br>
+	struct estructuraHijo hijo; </br>
+} arregloDeEstructuras[2];
+
+for(int i=0; i<2; i++) { </br>
+	cout<<"Ingrese su nombre: "; </br>
+	cin.getline(arregloDeEstructuras[i].nombre, '\n');</br></br>
+	cout<<"Ingrese un numero: "; </br>
+	cin>>arregloDeEstructuras[i].hijo.numero; </br></br> 	cout<<endl; </br>fflush(stdin); // Esta linea vacia el buffer </br>
+}
 
 ## Funciones matematicas
 
