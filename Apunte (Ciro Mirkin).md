@@ -4,6 +4,15 @@
 
  #define forr(n, i) for(int i=0; i **<** n; i++) 
 
+## Lectura de archivo
+
+**Libreria:** #include<fstream>
+
+vector<string> in( 4 ); </br>
+ifstream input("archivo.txt"); </br>
+if( input.is_open( ) ) for(int i=0; i < 4; i++) getline( input, in[ i ] ); </br>
+input.close( );
+
 ## Vectores
 
 **Libreria:** #include< vector >
