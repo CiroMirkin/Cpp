@@ -6,7 +6,7 @@
 
 ## Lectura de archivo
 
-**Libreria:** #include<fstream>
+**Libreria:** #include< fstream >
 
 vector<string> in( 4 ); </br>
 ifstream input("archivo.txt"); </br>
@@ -170,3 +170,33 @@ islower( c ); // (a-z)
 isupper( c ); // (A-Z)
 
 isspace( c ); // espacios, tabulaciones, retornos de linea, cambio de linea, etc.
+
+---
+
+int inf = 0, sup = n, mid;
+while(inf <= sup) {
+	mid = (inf + sup) / 2;
+	if(numeros[mid] == dato) {
+		flag = true;
+		break;
+	}
+	if(numeros[mid] > dato) {
+		sup = mid;
+		mid = (inf + sup) / 2;
+	}
+	if(numeros[mid] < dato) {
+		inf = mid;
+		mid = (inf + sup) / 2;
+	}
+}
+
+int pos, aux;
+for(int i=0; i<N; i++) {
+	pos = i;
+	aux = numeros[i];
+	while(pos>0 and numeros[pos-1]>aux) {
+	numeros[pos] = numeros[pos-1];
+	pos--;
+}
+numeros[pos] = aux;
+}
